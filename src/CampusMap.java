@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
@@ -9,12 +12,9 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 public class CampusMap implements TileBasedMap {
 	public static int[][] map = new int[98][151];
 	public CampusMap() {
+		InputStream in = getClass().getClassLoader().getResourceAsStream("map.txt");
 		BufferedReader br=null;
-		try {
-			br = new BufferedReader(new FileReader("C:\\Users\\Ryan\\Desktop\\map.txt"));
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
+		br = new BufferedReader(new InputStreamReader(in));
 		
 		for(int row=0;row<98;row++) {
 			String line=null;

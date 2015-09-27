@@ -9,7 +9,6 @@ public class Main {
 	public static CampusMap map = new CampusMap();
 	public static ArrayList<Student> students = new ArrayList<Student>();	
 	public static void main(String[] args) {
-		new Window();
 		
 		int[][] heatmap = new int[98][151];
 		for(int row=0; row<98; row++) {
